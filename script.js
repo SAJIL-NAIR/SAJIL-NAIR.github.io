@@ -1,5 +1,51 @@
+const root = document.documentElement;
+root.classList.add("js");
+
 const menuToggle = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector("#site-nav");
+const themeToggle = document.querySelector(".theme-toggle");
+const themeSymbol = themeToggle ? themeToggle.querySelector(".theme-symbol") : null;
+
+const applyTheme = (theme) => {
+  const safeTheme = theme === "dark" ? "dark" : "light";
+  root.setAttribute("data-theme", safeTheme);
+
+  if (themeToggle) {
+    themeToggle.setAttribute("aria-label", safeTheme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+    themeToggle.setAttribute("aria-pressed", String(safeTheme === "dark"));
+    if (themeSymbol) {
+      themeSymbol.textContent = safeTheme === "dark" ? "⏾" : "☀︎";
+    }
+  }
+
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  if (themeColor) {
+    themeColor.setAttribute("content", safeTheme === "dark" ? "#0f141a" : "#f5f7fa");
+  }
+
+  try {
+    localStorage.setItem("theme", safeTheme);
+  } catch (error) {
+    // Ignore storage issues and keep the current session theme.
+  }
+};
+
+const storedTheme = (() => {
+  try {
+    return localStorage.getItem("theme");
+  } catch (error) {
+    return null;
+  }
+})();
+
+applyTheme(storedTheme === "dark" ? "dark" : "light");
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const nextTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    applyTheme(nextTheme);
+  });
+}
 
 if (menuToggle && siteNav) {
   menuToggle.addEventListener("click", () => {
@@ -15,6 +61,22 @@ if (menuToggle && siteNav) {
       menuToggle.setAttribute("aria-label", "Open navigation");
     });
   });
+}
+
+const revealItems = document.querySelectorAll(".reveal");
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealItems.forEach((item) => revealObserver.observe(item));
+} else {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
 }
 
 document.querySelectorAll("[data-resume-download]").forEach((link) => {

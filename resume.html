@@ -4,8 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Resume of Sajil S Nair, Computer Science and Engineering student focused on software development, backend, AI/ML, and web technologies.">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#f5f7fa">
   <title>Resume | Sajil S Nair</title>
+  <script>
+    (function () {
+      try {
+        const savedTheme = localStorage.getItem('theme');
+        document.documentElement.setAttribute('data-theme', savedTheme === 'dark' ? 'dark' : 'light');
+      } catch (error) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,18 +24,24 @@
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="index.html" aria-label="Sajil S Nair portfolio">Sajil S Nair</a>
-      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
-        <span></span><span></span><span></span>
-      </button>
-      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-        <a href="index.html">Back to Portfolio</a>
-      </nav>
+      <a class="brand" href="index.html" aria-label="Home">Home</a>
+      <div class="nav-controls">
+        <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+          <a href="index.html">Back to Portfolio</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+          <span class="theme-symbol" aria-hidden="true">☀︎</span>
+          <span class="sr-only">Theme</span>
+        </button>
+        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="resume-intro">
+    <section class="resume-intro reveal">
       <div class="container">
         <p class="overline">SAJIL S NAIR · PROFESSIONAL PROFILE</p>
         <h1>Resume</h1>
@@ -43,7 +59,7 @@
       </div>
     </section>
 
-    <section class="resume-section">
+    <section class="resume-section reveal">
       <div class="container">
         <h2>Summary / Profile</h2>
         <p>
@@ -54,7 +70,7 @@
       </div>
     </section>
 
-    <section class="resume-section">
+    <section class="resume-section reveal">
       <div class="container">
         <h2>Education</h2>
         <article class="resume-entry">
@@ -65,35 +81,35 @@
       </div>
     </section>
 
-    <section class="resume-section">
+    <section class="resume-section reveal">
       <div class="container">
         <h2>Technical Skills</h2>
         <div class="skills-grid">
-          <article class="skill-group">
+          <article class="skill-group reveal">
             <h3>Programming Languages</h3>
             <p>Python · Java · C · C++ · SQL · JavaScript</p>
           </article>
-          <article class="skill-group">
+          <article class="skill-group reveal">
             <h3>Web Technologies</h3>
             <p>HTML · CSS · React.js · Node.js</p>
           </article>
-          <article class="skill-group">
+          <article class="skill-group reveal">
             <h3>Backend &amp; APIs</h3>
             <p>FastAPI · REST APIs · Kong · Keycloak · JWT</p>
           </article>
-          <article class="skill-group">
+          <article class="skill-group reveal">
             <h3>AI/ML &amp; Data</h3>
             <p>Machine Learning · Sentiment Analysis · Jupyter Notebook</p>
           </article>
-          <article class="skill-group">
+          <article class="skill-group reveal">
             <h3>Tools &amp; Platforms</h3>
             <p>Docker · Docker Compose · Git · GitHub · VS Code · AWS fundamentals</p>
           </article>
-          <article class="skill-group">
+          <article class="skill-group reveal">
             <h3>Embedded Systems</h3>
             <p>Arduino · RFID · Arduino IDE</p>
           </article>
-          <article class="skill-group">
+          <article class="skill-group reveal">
             <h3>AR / 3D</h3>
             <p>Blender · glTF/GLB · A-Frame · WebXR</p>
           </article>
@@ -101,7 +117,7 @@
       </div>
     </section>
 
-    <section class="resume-section">
+    <section class="resume-section reveal">
       <div class="container">
         <h2>Projects</h2>
         <div class="resume-entry-list">
@@ -112,25 +128,25 @@
               with Keycloak authentication, JWT-protected routes, and rate limiting.
             </p>
             <p><strong>Technologies:</strong> Kong, Keycloak, FastAPI, Docker, Docker Compose, JWT, REST APIs, OAuth2-related authentication, rate limiting.</p>
-            <a class="project-link" href="https://github.com/SAJIL-NAIR/NMS-API-Access-Control" target="_blank" rel="noopener noreferrer">GitHub repository <span aria-hidden="true">↗</span></a>
+            <a class="project-link" href="https://github.com/SAJIL-NAIR/NMS-API-Access-Control" target="_blank" rel="noopener noreferrer">GitHub repository</a>
           </article>
           <article class="resume-entry">
             <h3>MindPulse AI</h3>
             <p>Web application for employee feedback and structured analysis of stress, workload, emotional state, and written feedback.</p>
             <p><strong>Technologies:</strong> React.js, Node.js, NLP, sentiment analysis.</p>
-            <a class="project-link" href="https://github.com/SAJIL-NAIR/MindPulse-AI" target="_blank" rel="noopener noreferrer">GitHub repository <span aria-hidden="true">↗</span></a>
+            <a class="project-link" href="https://github.com/SAJIL-NAIR/MindPulse-AI" target="_blank" rel="noopener noreferrer">GitHub repository</a>
           </article>
           <article class="resume-entry">
             <h3>Interactive 3D Heart / AR</h3>
             <p>Animated 3D heart created in Blender and integrated into a browser-based experience for web and AR presentation.</p>
             <p><strong>Technologies:</strong> Blender, glTF/GLB, web/AR.</p>
-            <a class="project-link" href="https://github.com/SAJIL-NAIR/HEART_AR" target="_blank" rel="noopener noreferrer">GitHub repository <span aria-hidden="true">↗</span></a>
+            <a class="project-link" href="https://github.com/SAJIL-NAIR/HEART_AR" target="_blank" rel="noopener noreferrer">GitHub repository</a>
           </article>
           <article class="resume-entry">
             <h3>AR Room View</h3>
             <p>Interactive browser-based 3D room experience using an A-Frame environment and GLB model.</p>
             <p><strong>Technologies:</strong> HTML, 3D model/GLB, A-Frame, browser-based AR/WebXR-related technologies.</p>
-            <a class="project-link" href="https://github.com/SAJIL-NAIR/AR-ROOM-VIEW" target="_blank" rel="noopener noreferrer">GitHub repository <span aria-hidden="true">↗</span></a>
+            <a class="project-link" href="https://github.com/SAJIL-NAIR/AR-ROOM-VIEW" target="_blank" rel="noopener noreferrer">GitHub repository</a>
           </article>
           <article class="resume-entry">
             <h3>RFID Attendance System</h3>
@@ -141,7 +157,7 @@
       </div>
     </section>
 
-    <section class="resume-section">
+    <section class="resume-section reveal">
       <div class="container">
         <h2>Certifications</h2>
         <div class="resume-entry-list">
@@ -172,19 +188,6 @@
         </div>
       </div>
     </section>
-
-    <section class="resume-section">
-      <div class="container">
-        <h2>Contact</h2>
-        <div class="contact-list">
-          <a href="mailto:sajil.nair@outlook.com"><span>Email</span><strong>sajil.nair@outlook.com ↗</strong></a>
-          <a href="tel:+919883056378"><span>Phone</span><strong>+91 98830 56378 ↗</strong></a>
-          <a href="https://github.com/SAJIL-NAIR" target="_blank" rel="noopener noreferrer"><span>GitHub</span><strong>github.com/SAJIL-NAIR ↗</strong></a>
-          <a href="https://www.linkedin.com/in/sajil-nair-3112o4" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><strong>linkedin.com/in/sajil-nair-3112o4 ↗</strong></a>
-        </div>
-      </div>
-    </section>
-
   </main>
 
   <footer class="site-footer">
