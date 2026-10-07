@@ -22,6 +22,7 @@ No framework or build step is required.
 - Certifications
 - Education
 - Contact
+- Resume
 
 ## Featured Projects
 
@@ -49,6 +50,9 @@ Open `index.html` directly in a browser, or use VS Code Live Server.
 ```text
 portfolio/
 ├── index.html
+├── resume.html
+├── resume/
+│   └── RESUME.pdf
 ├── style.css
 ├── script.js
 └── README.md
