@@ -53,6 +53,8 @@ portfolio/
 ├── resume.html
 ├── resume/
 │   └── RESUME.pdf
+├── certificates/
+│   └── Certificate PDFs
 ├── style.css
 ├── script.js
 └── README.md

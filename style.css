@@ -95,7 +95,7 @@ button { font: inherit; }
 .nav-controls {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
 }
 
 .brand {
@@ -229,7 +229,7 @@ button { font: inherit; }
 .resume-entry,
 .resume-section,
 .resume-intro {
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  transition: border-color .2s ease;
 }
 
 .hero-content {
@@ -537,12 +537,6 @@ button { font: inherit; }
   border-color: var(--accent-dark);
 }
 
-.project-button-disabled {
-  background: var(--surface);
-  border-color: var(--line);
-  color: var(--muted);
-  cursor: default;
-}
 
 .featured-project .project-body {
   position: relative;
